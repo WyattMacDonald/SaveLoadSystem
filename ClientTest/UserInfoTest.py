@@ -19,7 +19,7 @@ print(currentPythonPath)
 
 
 
-filePath = str(currentPythonPath) + "/testStates/"  + filename + ".txt"
+filePath = str(currentPythonPath) + "/"  + filename + ".txt"
 
 if Path(filePath).is_file():
     Socket.send_string("L"+filePath)
