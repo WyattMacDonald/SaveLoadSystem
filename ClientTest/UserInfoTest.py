@@ -15,19 +15,15 @@ Socket.connect("tcp://localhost:5554")
 filename = input("Enter filename: ")
 currentPythonPath = str(Path(__file__).resolve().parent)
 
-
-
-
-
 filePath = str(currentPythonPath) + "/"  + filename + ".txt"
 
 if Path(filePath).is_file():
-    Socket.send_string("L"+filePath)
+    Socket.send_string("L,"+filePath)
 
     name = Socket.recv().decode()
     if name != "Error, no such file exists":
         print("Ah welcome: " + name)
-        Socket.send_string("S" + filePath + ",S," + name)
+        Socket.send_string("S," + filePath + ",S," + name)
 
     else:
         print(name)
@@ -35,7 +31,7 @@ if Path(filePath).is_file():
 
 else:
     newname = input("Enter your name: ")
-    Socket.send_string("S" + filePath + ",S," + newname)
+    Socket.send_string("S," + filePath + ",S," + newname)
 
 
 

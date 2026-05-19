@@ -26,7 +26,7 @@ while True:
                 inp = ""
                 type = ''
                 State = 0
-                for char in recieved[1:]:
+                for char in recieved[2:]:
 
                     if State == 2:
                         inp += char
@@ -68,7 +68,7 @@ while True:
         try:
             if recieved[0] == 'L':
                 path = ""
-                for char in recieved[1:]:
+                for char in recieved[2:]:
                     path += char
 
                 if Path(path).is_file():
