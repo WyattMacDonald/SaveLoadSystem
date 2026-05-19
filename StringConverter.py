@@ -21,6 +21,19 @@ def ConvertToBool(input):
         return False
     else:
         return True
+def getType(input):
+    if type(input) == str:
+        return "S"
+    if type(input) == int:
+        return "I"
+    if type(input) == float:
+        return "F"
+    if type(input) == bool:
+        return "B"
+    if type(input) == list:
+        return "A"
+    return 'C'
+
 
 def ConvertStringToVariable(input):
 
