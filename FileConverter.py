@@ -52,4 +52,4 @@ def popLastLine(filepath):
 
 
 
-addData("SaveStates/Test.txt", True)
+addData("SaveStates/Test.txt", [20,20,20])
