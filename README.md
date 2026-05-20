@@ -51,7 +51,7 @@ and example:
 The reason why we need a L in front is because that is the main command
 once you send this you will recive the unicode for the last data put into the file which you will have to decode
 
-code example:
+code example along with a instance of reciving the data:
 ```
 #sets the type of Socket we work with to send requests to the server
 Socket = zmq.Context().socket(zmq.REQ)
@@ -64,7 +64,7 @@ currentPythonPath = str(Path(__file__).resolve().parent)
 filePath = str(currentPythonPath) + "/"  + filename + ".txt"
 newname = input("Enter your name: ")
 Socket.send_string("L," + filePath)
-
+#calling socet.recv().decode() will be the only thing you will have to do to grab your data
 name = Socket.recv().decode()
 ```
 
