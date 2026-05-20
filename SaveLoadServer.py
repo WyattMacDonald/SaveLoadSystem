@@ -72,7 +72,7 @@ while True:
                     path += char
 
                 if Path(path).is_file():
-                    socket.send_unicode(FileConverter.popLastLine(path))
+                    socket.send_string(str(FileConverter.popLastLine(path)).strip())
                 else:
                     socket.send_string("Error, no such file exists")
         except Exception as e:

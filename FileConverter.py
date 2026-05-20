@@ -20,6 +20,7 @@ def directlyAddData(filepath, data):
     if not newFile and not emptyFile:
         fileW.write("\n")
     fileW.write(data)
+    fileW.close()
 
 def addData(filepath, data):
 
@@ -34,10 +35,12 @@ def addData(filepath, data):
 
 
 
+
     fileW = open(filepath, fileReadType)
+
+    foundEntry = False
     if not newFile and not emptyFile:
         fileW.write("\n")
-    foundEntry = False
     if type(data) is int:
         fileW.write("I " + str(data))
         foundEntry = True
@@ -63,6 +66,7 @@ def addData(filepath, data):
         foundEntry = True
     if not foundEntry:
         fileW.write("C "+ str(data))
+
 
 
     fileW.close()
